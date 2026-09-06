@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dashboard | SmartPark</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🚗 Smart<span>Park</span>
+        </div>
+
+        <a href="{{ url_for('logout') }}">
+            Logout
+        </a>
+
+    </nav>
+
+    <section class="dashboard">
+
+        <h1>Welcome, {{ name }} 👋</h1>
+
+        <p>
+            Find and book your perfect parking slot.
+        </p>
+
+        <button class="primary-btn">
+            🅿️ Find Parking
+        </button>
+
+    </section>
+
+</body>
+</html>

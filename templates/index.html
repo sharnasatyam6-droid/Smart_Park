@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartPark | Smart Parking Solution</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🚗 Smart<span>Park</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#">About</a>
+            <a href="{{ url_for('login') }}">
+                <button class="login-btn">Login</button>
+            </a>
+             <a href="{{ url_for('admin_login') }}">
+                <button class="login-btn">Admin / Owner</button>
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">SMART PARKING SYSTEM</p>
+
+            <h1>
+                Find Your Parking
+                <span>Spot Easily.</span>
+            </h1>
+
+            <p class="hero-text">
+                Search, reserve and manage your parking slot
+                before you even reach your destination.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{{ url_for('parking') }}">
+                    <button class="primary-btn">
+                        🅿️ Find Parking
+                    </button>
+                </a>
+
+                <button class="secondary-btn">
+                    Learn More →
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Parking Card -->
+        <div class="parking-card">
+
+            <div class="card-header">
+                <div>
+                    <p>Nearby Parking</p>
+                    <h2>City Mall Parking</h2>
+                </div>
+
+                <span class="available">● Available</span>
+            </div>
+
+            <div class="parking-info">
+
+                <div>
+                    <strong>24</strong>
+                    <small>Available Slots</small>
+                </div>
+
+                <div>
+                    <strong>₹30</strong>
+                    <small>Per Hour</small>
+                </div>
+
+                <div>
+                    <strong>0.8 km</strong>
+                    <small>Distance</small>
+                </div>
+
+            </div>
+
+            <a href="{{ url_for('parking') }}">
+                <button class="book-btn">
+                    Book a Slot
+                </button>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <h2>Why Choose SmartPark?</h2>
+
+        <p class="section-subtitle">
+            Parking made simple, fast and convenient.
+        </p>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Find Parking</h3>
+                <p>
+                    Find available parking locations near you.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🅿️</div>
+                <h3>Reserve Slot</h3>
+                <p>
+                    Select your preferred parking slot in advance.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎫</div>
+                <h3>Digital Booking</h3>
+                <p>
+                    Get a digital booking confirmation instantly.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

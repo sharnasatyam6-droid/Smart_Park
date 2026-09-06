@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parking Slots | SmartPark</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🚗 Smart<span>Park</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <main class="parking-page">
+
+        <div class="parking-title">
+
+            <p class="small-title">SMART PARKING</p>
+
+            <h1>Select Your Parking Slot</h1>
+
+            <p>
+                Choose an available slot and reserve it instantly.
+            </p>
+
+        </div>
+
+
+        <!-- Parking information -->
+
+        <div class="location-card">
+
+            <div>
+                <p class="card-label">Parking Location</p>
+
+                <h2>🏢 City Mall Parking</h2>
+
+                <p>📍 0.8 km away</p>
+            </div>
+
+            <div class="price">
+
+                <strong>₹30</strong>
+
+                <span>per hour</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Legend -->
+
+        <div class="legend">
+
+            <div>
+                <span class="legend-box available-box"></span>
+                Available
+            </div>
+
+            <div>
+                <span class="legend-box occupied-box"></span>
+                Occupied
+            </div>
+
+            <div>
+                <span class="legend-box selected-box"></span>
+                Selected
+            </div>
+
+        </div>
+
+
+        <!-- Parking area -->
+
+        <div class="parking-area">
+
+            <h2>Parking Area A</h2>
+
+            <div class="parking-grid">
+
+                <button class="slot available-slot">A1</button>
+
+                <button class="slot available-slot">A2</button>
+
+                <button class="slot occupied-slot" disabled>A3</button>
+
+                <button class="slot available-slot">A4</button>
+
+                <button class="slot occupied-slot" disabled>A5</button>
+
+                <button class="slot available-slot">A6</button>
+
+
+                <button class="slot available-slot">B1</button>
+
+                <button class="slot occupied-slot" disabled>B2</button>
+
+                <button class="slot available-slot">B3</button>
+
+                <button class="slot available-slot">B4</button>
+
+                <button class="slot occupied-slot" disabled>B5</button>
+
+                <button class="slot available-slot">B6</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Booking panel -->
+
+        <div class="booking-panel">
+
+            <div>
+
+                <p>Selected Slot</p>
+
+                <h2 id="selected-slot">None</h2>
+
+            </div>
+
+            <button id="continue-btn" disabled>
+                Continue →
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const slots = document.querySelectorAll(".available-slot");
+
+        const selectedSlot =
+            document.getElementById("selected-slot");
+
+        const continueButton =
+            document.getElementById("continue-btn");
+
+
+        slots.forEach(slot => {
+
+            slot.addEventListener("click", function () {
+
+                slots.forEach(s =>
+                    s.classList.remove("selected-slot")
+                );
+
+                this.classList.add("selected-slot");
+
+                selectedSlot.textContent = this.textContent;
+
+                continueButton.disabled = false;
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
